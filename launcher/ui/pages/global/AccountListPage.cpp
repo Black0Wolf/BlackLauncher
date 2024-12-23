@@ -134,14 +134,7 @@ void AccountListPage::listChanged()
 
 void AccountListPage::on_actionAddAuthlibInjector_triggered()
 {
-    if (!m_accounts->anyAccountIsValid()) {
-        QMessageBox::warning(this, tr("Error"),
-                             tr("You must add a Microsoft account that owns Minecraft before you can add an account on a custom "
-                                "authentication server."
-                                "<br><br>"
-                                "If you have lost your account you can contact Microsoft for support."));
-        return;
-    }
+
 
     MinecraftAccountPtr account = AuthlibInjectorLoginDialog::newAccount(
         this, tr("Please enter your username (sometimes an email address), password, and the URL of your API server."
